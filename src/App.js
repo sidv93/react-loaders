@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Wave from './components/Wave';
 import Cicle from './components/Cicle';
 import Bounce from './components/Bounce';
+import Modal from './components/Modal';
 
 const Container = styled.div`
   width: 100vw;
@@ -47,21 +48,27 @@ const Canvas = styled.div`
 const links = [
     { label: 'bounce', active: true },
     { label: 'circle', active: false },
-    { label: 'wave', active: false }
+    { label: 'wave', active: false },
+    { label: 'modal', active: false }
 ]
 function App() {
     const [current, setCurrent] = useState(links);
     const [active, setActive] = useState('bounce');
+    const [showModal, toggleModal] = useState(false);
     const toggleActive = index => {
         const copy = [...current];
         const currentActive = copy.findIndex(item => item.active === true);
         copy[currentActive].active = false;
         copy[index].active = true;
         setActive(copy[index].label);
-        setCurrent(copy);
+            setCurrent(copy);
+        if (copy[index].label === 'modal') {
+            toggleModal(true);
+        }
     }
     return (
         <Container>
+            <Modal showModal={showModal} toggleModal={toggleModal} />
             <Nav>
                 {
                     current.map((item, index) =>
