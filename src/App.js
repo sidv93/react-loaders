@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import styled from 'styled-components';
 import Wave from './components/Wave';
 import Cicle from './components/Cicle';
 import Bounce from './components/Bounce';
 import Modal from './components/Modal';
+import Cred from './components/Cred';
 
 const Container = styled.div`
   width: 100vw;
@@ -49,7 +50,8 @@ const links = [
     { label: 'bounce', active: true },
     { label: 'circle', active: false },
     { label: 'wave', active: false },
-    { label: 'modal', active: false }
+    { label: 'modal', active: false },
+    { label: 'cred', active: false},
 ]
 function App() {
     const [current, setCurrent] = useState(links);
@@ -80,6 +82,7 @@ function App() {
                     {active === 'wave' && <Wave />}
                     {active === 'circle' && <Cicle />}
                     {active === 'bounce' && <Bounce />}
+                    {active === 'cred' && <Cred />}
                 </Canvas>
             </CanvasContainer>
         </Container>

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-
 const transition = { duration: 0.4, yoyo: Infinity, ease: [0.6, 0.01, -0.05, 0.9] };
 
 const Container = styled.div`
@@ -19,7 +18,7 @@ const Dots = styled(motion.div)`
     justify-content: center;
 `;
 const Dot = styled(motion.div)`
-    background-color: black;
+    background-color: #6666ff;
     height: 20px;
     width: 20px;
     border-radius: 10px;
