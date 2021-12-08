@@ -6,6 +6,7 @@ import Cicle from './components/Cicle';
 import Bounce from './components/Bounce';
 import Modal from './components/Modal';
 import Cred from './components/Cred';
+import Pulse from './components/Pulse';
 
 const Container = styled.div`
   width: 100vw;
@@ -52,6 +53,7 @@ const links = [
     { label: 'wave', active: false },
     { label: 'modal', active: false },
     { label: 'cred', active: false},
+    { label: 'pulse', active: false },
 ]
 function App() {
     const [current, setCurrent] = useState(links);
@@ -83,6 +85,7 @@ function App() {
                     {active === 'circle' && <Cicle />}
                     {active === 'bounce' && <Bounce />}
                     {active === 'cred' && <Cred />}
+                    {active === 'pulse' && <Pulse />}
                 </Canvas>
             </CanvasContainer>
         </Container>
